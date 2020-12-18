@@ -26,7 +26,7 @@
             <th scope="row">{{ $key + $payment->firstItem()}}</th>
             <td>{{$item->payment_name}}</td>
             <td>
-                <input type="checkbox" name="pilih[]" value="{{$item->id}}">{{$item->id}}		
+                <input type="checkbox" name="pilih[]" value="{{$item->id}}">	
               </td>
             </tr>
             @endforeach

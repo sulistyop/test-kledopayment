@@ -38,7 +38,6 @@ class PaymentController extends Controller
         );
     }
 
-
     function apiDelete(Request $request){
         $data = $request->pilih;
         $sum = count($data);
@@ -47,7 +46,6 @@ class PaymentController extends Controller
             $delete = DB::table('payments')->where('id',$data[$x]);
             $job = (new DeletePayment($data[$x]))->delay(Carbon::now()->addSeconds(5));
             $jobId=dispatch($job);
-            
         }
         return redirect('/')->with("status", "Job Deleted");
     }
