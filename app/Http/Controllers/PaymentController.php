@@ -55,7 +55,7 @@ class PaymentController extends Controller
             'payment_name'=>'required'
         ]);
         Payment::create($request->all());
-        return redirect('/');
+        return redirect('/')->with('status',''.$request->payment_name.'Berhasil Ditambahkan ');
     }
     function addpayment(){
         return view('payment.addpayment');

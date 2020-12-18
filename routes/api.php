@@ -21,4 +21,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/payment', [PaymentController::class,'apiGet']);
 Route::post('/payment', [PaymentController::class,'apiPost']);
-Route::delete('/payments', [PaymentController::class,'apiDelete']);
+Route::delete('/payment', [PaymentController::class,'apiDelete']);

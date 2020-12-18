@@ -4,6 +4,16 @@
 @section('content')
 
 <div class="container m-5">
+ 
+    @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
     <div class="container">
         <a href="/addpayment" class="btn btn-primary">Tambah</a>
     </div>
@@ -17,7 +27,7 @@
         </tr>
       </thead>
       <tbody>
-        <form action="/api/payments" method="post">
+        <form action="/api/payment" method="post">
           @csrf
           @method('delete')
         @foreach ($payment as $key => $item)
@@ -37,7 +47,9 @@
             </form>  --}}
           </tbody>
         </table>
-        <button type="submit" class="btn btn-danger">Delete</button>
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </div>
       </form>
       {{$payment->links()}}
 </div>

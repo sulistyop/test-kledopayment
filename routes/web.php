@@ -18,11 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('payment.index');
-// });
 Route::get('/', [PaymentController::class,'get']);
 Route::get('/addpayment',[PaymentController::class,'addpayment']);
+Route::post('/create',[PaymentController::class,'post']);
 
 
     
